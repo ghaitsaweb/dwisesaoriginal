@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+        <!-- Form view untuk res.partner -->
+        <record id="view_partner_form_custom" model="ir.ui.view">
+            <field name="name">res.partner.form.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Menambahkan field customers_id di atas Address -->
+                <xpath expr="//field[@name='street']" position="before">
+                    <field name="customers_id" string="Customer ID"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
