@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+<record id="view_crm_lead_form_inherit" model="ir.ui.view">
+    <field name="name">crm.lead.form.inherit</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_form"/>  <!-- Mengacu pada view crm.lead.form -->
+    <field name="arch" type="xml">
+        <!-- Menambahkan field Customer Type, Project?, Project Name, Project ID, Project Manager di bawah field phone -->
+<xpath expr="//group[@name='opportunity_partner']" position="inside">
+            <!-- Menambahkan field setelah phone -->
+            <label for="customer_type" string="Customer Type" class="oe_inline"/>
+            <div class="o_row o_row_readonly">
+                <field name="customer_type"/>
+            </div>
+            
+            <label for="project" string="Project?" class="oe_inline"/>
+            <div class="o_row o_row_readonly">
+                <field name="project"/>
+            </div>
+
+            <label for="project_name" string="Project Name" class="oe_inline"/>
+            <div class="o_row o_row_readonly">
+                <field name="project_name" attrs="{'invisible': [('project', '=', False)]}"/>
+            </div>
+
+            <label for="project_id" string="Project ID" class="oe_inline"/>
+            <div class="o_row o_row_readonly">
+                <field name="project_id" readonly="1"/>
+            </div>
+
+            <label for="project_manager" string="Project Manager" class="oe_inline"/>
+            <div class="o_row o_row_readonly">
+                <field name="project_manager" attrs="{'invisible': [('project', '=', False)]}"/>
+            </div>
+
+        </xpath>
+
+        <!-- Menambahkan field Margin, Margin % dan PO Date di bawah tag_ids -->
+        <xpath expr="//field[@name='tag_ids']" position="after">
+           <field name="cogs"/>
+            <field name="margin" readonly="1"/>
+            <field name="margin_percent" readonly="1"/>
+            <field name="po_date"/>
+        </xpath>
+    </field>
+</record>
+
+    </data>
+</odoo>
