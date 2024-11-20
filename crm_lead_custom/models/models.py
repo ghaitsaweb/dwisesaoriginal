@@ -69,9 +69,9 @@ class project_project_custom(models.Model):
     project_id = fields.Char(string='Project ID', )
 
 
-# class respartnercustom(models.Model):
-#     _inherit = 'res.partner'
-#     _description = 'crm_lead_custom.res_partner'
+class respartnercustom(models.Model):
+    _inherit = 'res.partner'
+    _description = 'crm_lead_custom.res_partner'
 
 
-#     customers_id = fields.Char(string='Customer ID', )
+    customers_id = fields.Char(string='Customer ID', )
