@@ -18,17 +18,17 @@
                 <field name="project"/>
             </div>
 
-            <label for="project_name" string="Project Name" class="oe_inline"/>
+            <label for="project_name" string="Project Name" class="oe_inline" attrs="{'invisible': [('project', '=', False)]}"/>
             <div class="o_row o_row_readonly">
                 <field name="project_name" attrs="{'invisible': [('project', '=', False)]}"/>
             </div>
 
-            <label for="project_id" string="Project ID" class="oe_inline"/>
+            <label for="project_id" string="Project ID" class="oe_inline" attrs="{'invisible': [('project', '=', False)]}"/>
             <div class="o_row o_row_readonly">
-                <field name="project_id" readonly="1"/>
+                <field name="project_id" readonly="1" attrs="{'invisible': [('project', '=', False)]}"/>
             </div>
 
-            <label for="project_manager" string="Project Manager" class="oe_inline"/>
+            <label for="project_manager" string="Project Manager" class="oe_inline" attrs="{'invisible': [('project', '=', False)]}"/>
             <div class="o_row o_row_readonly">
                 <field name="project_manager" attrs="{'invisible': [('project', '=', False)]}"/>
             </div>
